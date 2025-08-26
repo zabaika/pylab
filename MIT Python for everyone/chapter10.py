@@ -1,18 +1,18 @@
 def print_by_count(dict):
-    final_list = sorted([(v, k) for k, v in dict.items()], reverse=True)
+    final_list = sorted([(v, k) for k, v in list(dict.items())], reverse=True)
     for count, hour in final_list:
-        print hour, count
+        print(hour, count)
 
 
 workdir = "C:\\Users\\Zabaika\\YandexDisk\\Coursera\\Python\\"
 while True:
     try:
-        fname = raw_input("Enter file name: ")
+        fname = input("Enter file name: ")
         if len(fname) < 1: fname = "mbox-short.txt"
         fh = open(workdir + fname)
         break
     except:
-        print "Wrong file name, please enter another"
+        print("Wrong file name, please enter another")
 
 hours = dict()
 for line in fh:
@@ -25,4 +25,4 @@ for line in fh:
             continue
 
 for key in sorted(hours):
-    print key, hours[key]
+    print(key, hours[key])

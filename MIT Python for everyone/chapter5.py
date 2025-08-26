@@ -1,11 +1,11 @@
 largest = None
 smallest = None
 while True:
-    num = raw_input("Enter a number: ")
+    num = input("Enter a number: ")
     if num == "done": break
     try: int(num)
     except:
-        print "Invalid input"
+        print("Invalid input")
         continue
     if largest is None:
         largest = num
@@ -15,5 +15,5 @@ while True:
         largest = num
     if num < smallest:
         smallest = num
-print "Maximum is", largest
-print "Minimum is", smallest
+print("Maximum is", largest)
+print("Minimum is", smallest)

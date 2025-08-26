@@ -5,19 +5,19 @@ def normalize(m):
     mean = np.mean(m, 0)
     st = np.std(m, 0)
     m_norm = (m - mean) / st
-    print m_norm
+    print(m_norm)
 
 
 def elements(m):
     summa = np.sum(m, 1)
-    print np.nonzero(summa > 10)
+    print((np.nonzero(summa > 10)))
 
 
 def singles(m1, m2):
-    print m1
-    print m2
+    print(m1)
+    print(m2)
     final = np.vstack((m1, m2))
-    print final
+    print(final)
 
 
 matrix = np.random.normal(1, 10, (1000, 50))
