@@ -8,10 +8,10 @@ def computepay(hours, rate):
 
 
 try:
-    hours = float(raw_input('Enter hours: '))
-    rate = float(raw_input('Enter rate: '))
+    hours = float(input('Enter hours: '))
+    rate = float(input('Enter rate: '))
 except:
-    print "Wrong number"
+    print("Wrong number")
     quit()
 result = computepay(hours, rate)
-print result
+print(result)

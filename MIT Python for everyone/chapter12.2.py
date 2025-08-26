@@ -1,4 +1,4 @@
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import re
 from bs4 import BeautifulSoup
 
@@ -8,8 +8,8 @@ position = 18
 names = [re.findall('by_(.+).html', url)]
 
 for i in range(counts):
-    print 'Retrieving:', url
-    soup = BeautifulSoup(urllib.urlopen(url).read(), "lxml")
+    print('Retrieving:', url)
+    soup = BeautifulSoup(urllib.request.urlopen(url).read(), "lxml")
     url = soup.find_all('a')[position-1].get('href')
     names.append(re.findall('by_(.+).html', url))
-print names.pop()
+print(names.pop())

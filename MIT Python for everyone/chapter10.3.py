@@ -8,12 +8,12 @@ from string import punctuation, whitespace, digits
 workdir = "C:\\Users\\Zabaika\\YandexDisk\\Coursera\\Python\\"
 while True:
     try:
-        fname = raw_input("Enter file name: ")
+        fname = input("Enter file name: ")
         if len(fname) < 1: fname = "words.txt"
         fh = open(workdir + fname)
         break
     except:
-        print 'Cannot open file:', fname, '. Please try, again.'
+        print('Cannot open file:', fname, '. Please try, again.')
 
 ignore = punctuation + whitespace + digits
 letters = dict()
@@ -22,6 +22,6 @@ for line in fh:
     for letter in line:
         letters[letter] = letters.get(letter, 0) + 1
 
-final_list = sorted([(v, k) for k, v in letters.items()], reverse=True)
-print('\n'.join(map(str,final_list)))
+final_list = sorted([(v, k) for k, v in list(letters.items())], reverse=True)
+print(('\n'.join(map(str,final_list))))
 fh.close()

@@ -4,7 +4,7 @@ try:
     conn = sqlite3.connect('/Users/work_advisa/Yandex.Disk.localized/Coursera/Python/chapter14.sqlite')
     cur = conn.cursor()
 except:
-    print "Can't connect", conn
+    print("Can't connect", conn)
     quit()
 
 cur.execute('''
@@ -34,8 +34,8 @@ conn.commit()
 # https://www.sqlite.org/lang_select.html
 sqlstr = 'SELECT org, count FROM Counts ORDER BY count DESC LIMIT 10'
 
-print "Counts:"
+print("Counts:")
 for row in cur.execute(sqlstr):
-    print str(row[0]), row[1]
+    print(str(row[0]), row[1])
 
 cur.close()
